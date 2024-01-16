@@ -2,6 +2,23 @@ main .inner-content {
   padding-top: 1rem;
   padding-bottom: 1rem;
 }
+
+.featured-publication-container {
+  background-color: var(--overlay-color);
+  margin-top: 1rem;
+  padding: 2rem;
+  color: var(--text-color-light);
+}
+.featured-publication-container h2,
+.featured-publication-container h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.featured-publication-container .fifty-fifty-column {
+  margin-top: 2rem;
+}
+
 .featured-publication-image-container {
   text-align: end;
 }

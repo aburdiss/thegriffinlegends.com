@@ -1,18 +1,28 @@
+@font-face {
+  font-family: 'Enriqueta', serif;
+  src: url('/assets/fonts/Enriqueta/Enriqueta-Regular.ttf') format('truetype');
+}
+@font-face {
+  font-family: 'Enriqueta', serif;
+  font-weight: bold;
+  src: url('/assets/fonts/Enriqueta/Enriqueta-Bold.ttf') format('truetype');
+}
+
 * {
   box-sizing: border-box;
-  font-family: Tahoma, Arial, sans-serif;
+  font-family: 'Enriqueta', 'Times New Roman', Times, serif;
 }
 
 :root {
+  --overlay-color: #00000088;
   --text-color: #000000;
   --text-color-hover: #444444;
   --text-color-light: #ffffff;
+  --text-color-hover-light: #bbbbbb;
   --primary1: #45659d;
   --primary2: #82204a;
-  --primary3: #fffecb;
-  --secondary1: #13ecc8;
-  --secondary2: #6cfffb;
-  --secondary3: #d1fffd;
+  --primary3: #79b473;
+  --primary4: #70a37f;
   --break-s: 800px;
   --break-l: 1024px;
   --transition: 0.2s;
@@ -38,6 +48,16 @@ a:hover,
 a:focus {
   color: var(--text-color-hover);
   text-decoration-color: var(--text-color-hover);
+}
+
+p {
+  margin-top: 0;
+}
+
+body {
+  background-image: url(./assets/images/background.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
 }
 
 .inner-content {
@@ -114,7 +134,7 @@ th {
 /*============================================================================*/
 header {
   padding: 0.75rem 0;
-  border-bottom: 1px solid black;
+  background-color: var(--overlay-color);
 }
 header .inner-content {
   display: flex;
@@ -125,6 +145,7 @@ header .inner-content {
   align-items: center;
 }
 .sitename {
+  color: var(--text-color-light);
   font-size: 2rem;
   font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
@@ -141,12 +162,20 @@ nav ul {
 nav ul li {
   padding-left: 1rem;
 }
+header nav a {
+  color: var(--text-color-light);
+}
+header nav a:hover,
+header nav a:focus {
+  color: var(--text-color-hover-light);
+}
 
 /*============================================================================*/
 /* Footer Styles */
 /*============================================================================*/
 footer {
-  border-top: 1px solid black;
+  background-color: var(--overlay-color);
+  color: var(--text-color-light);
 }
 
 footer .inner-content {
@@ -154,6 +183,14 @@ footer .inner-content {
   justify-content: space-between;
   align-items: center;
   padding: 0.75rem;
+}
+
+footer a {
+  color: var(--text-color-light);
+}
+footer a:hover,
+footer a:focus {
+  color: var(--text-color-hover-light);
 }
 
 /*! normalize.css v8.0.1 | MIT License | github.com/necolas/normalize.css */
