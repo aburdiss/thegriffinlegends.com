@@ -8,6 +8,10 @@
     <link href="./global.css" rel="stylesheet" />
     <link href="./home.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;700&display=swap"
+      rel="stylesheet"
+    />
 
     <link
       rel="apple-touch-icon"
@@ -36,7 +40,7 @@
     <header>
       <div class="inner-content">
         <a href="./" class="logo-container">
-          <img class="logo" src="./assets/images/griffinshield.jpeg" alt="" />
+          <img class="logo" src="./assets/images/griffinshield.png" alt="" />
           <div class="sitename">The Griffin Legends</div>
         </a>
         <nav>
@@ -53,9 +57,19 @@
     </header>
     <main id="main-content">
       <div class="inner-content">
-        <h1>The Griffin Legends</h1>
-        <div>Mark and Summer Howard</div>
-        <section class="featured-publication-container">
+        <section class="introduction-section overlay">
+          <div class="left">
+            <h1>The Griffin Legends</h1>
+            <div>Mark and Summer Howard</div>
+          </div>
+          <div class="right">
+            <img
+              src="./assets/images/markandsummer.jpg"
+              alt="A photo of Mark and Summer"
+            />
+          </div>
+        </section>
+        <section class="featured-publication-container overlay">
           <h2>Featured Publication</h2>
           <h3>Godfrey's Crusade</h3>
           <div class="fifty-fifty-column">
@@ -88,7 +102,7 @@
             </div>
           </div>
         </section>
-        <section class="contact-container">
+        <section class="contact-container overlay">
           <h2>Interested in Learning More?</h2>
           <p>
             Sign up for our email list to receive important updates and future
@@ -117,8 +131,14 @@
             </svg>
           </a>
         </div>
-        <div class="copyright">©2024 The Griffin Legends</div>
-        <a href="./privacy-policy">Privacy Policy</a>
+        <div id="copyright">©2024 The Griffin Legends</div>
+        <div class="links">
+          <a href="./privacy-policy">Privacy Policy</a>
+          <div>
+            Website built and designed by
+            <a href="https://alexanderburdiss.com">Alexander Burdiss</a>
+          </div>
+        </div>
       </div>
     </footer>
   </body>

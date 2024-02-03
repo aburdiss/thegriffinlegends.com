@@ -3,12 +3,25 @@ main .inner-content {
   padding-bottom: 1rem;
 }
 
-.featured-publication-container {
-  background-color: var(--overlay-color);
-  margin-top: 1rem;
-  padding: 2rem;
-  color: var(--text-color-light);
+.introduction-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+.introduction-section img {
+  max-width: 150px;
+}
+@media (min-width: 800px) {
+  .introduction-section {
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-between;
+  }
+  .introduction-section .right {
+    text-align: end;
+  }
+}
+
 .featured-publication-container h2,
 .featured-publication-container h3 {
   text-align: center;

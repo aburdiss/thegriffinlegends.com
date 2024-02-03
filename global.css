@@ -1,16 +1,6 @@
-@font-face {
-  font-family: 'Enriqueta', serif;
-  src: url('/assets/fonts/Enriqueta/Enriqueta-Regular.ttf') format('truetype');
-}
-@font-face {
-  font-family: 'Enriqueta', serif;
-  font-weight: bold;
-  src: url('/assets/fonts/Enriqueta/Enriqueta-Bold.ttf') format('truetype');
-}
-
 * {
   box-sizing: border-box;
-  font-family: 'Enriqueta', 'Times New Roman', Times, serif;
+  font-family: 'Enriqueta', serif;
 }
 
 :root {
@@ -65,6 +55,17 @@ body {
   margin: auto;
   padding-left: 2rem;
   padding-right: 2rem;
+}
+
+.overlay {
+  background-color: var(--overlay-color);
+  margin-top: 1rem;
+  padding: 2rem;
+  color: var(--text-color-light);
+}
+
+.overlay:first-of-type {
+  margin-top: 0rem;
 }
 
 .fifty-fifty-column {
@@ -182,7 +183,16 @@ footer .inner-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 0.75rem;
+  padding: 0.75rem 2rem;
+  flex-direction: column;
+}
+@media (min-width: 800px) {
+  footer .inner-content {
+    flex-direction: row;
+  }
+}
+footer .links {
+  text-align: right;
 }
 
 footer a {
