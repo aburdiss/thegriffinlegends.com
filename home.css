@@ -11,14 +11,25 @@ main .inner-content {
 .introduction-section img {
   max-width: 150px;
 }
+.introduction-section h1 {
+  text-align: center;
+}
+.introduction-section .right {
+  padding-top: 2rem;
+}
 @media (min-width: 800px) {
   .introduction-section {
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
   }
+  .introduction-section h1 {
+    text-align: left;
+  }
   .introduction-section .right {
     text-align: end;
+    padding-top: unset;
+    padding-left: 2rem;
   }
 }
 
@@ -31,9 +42,13 @@ main .inner-content {
 .featured-publication-container .fifty-fifty-column {
   margin-top: 2rem;
 }
-
 .featured-publication-image-container {
-  text-align: end;
+  text-align: center;
+}
+@media (min-width: 800px) {
+  .featured-publication-image-container {
+    text-align: end;
+  }
 }
 .featured-publication-image {
   max-width: 100%;
