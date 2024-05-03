@@ -57,11 +57,17 @@ body {
   padding-right: 2rem;
 }
 
+main .inner-content {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .overlay {
   background-color: var(--overlay-color);
   margin-top: 1rem;
-  padding: 2rem;
+  padding: 1.6rem 2rem;
   color: var(--text-color-light);
+  border-bottom: 0.5px solid var(--primary1);
 }
 
 .overlay:first-of-type {
@@ -136,6 +142,7 @@ th {
 header {
   padding: 0.75rem 0;
   background-color: var(--overlay-color);
+  border-bottom: 0.5px solid var(--primary1);
 }
 header .inner-content {
   display: flex;
@@ -206,7 +213,7 @@ footer .copyright {
   margin: 1rem 0;
 }
 
-footer .links  > div {
+footer .links > div {
   margin: 1rem;
 }
 
