@@ -5,3 +5,7 @@
 .privacy-policy-container a:focus {
   color: var(--text-color-hover-light);
 }
+
+.privacy-policy-container h2 {
+  margin-bottom: 1rem;
+}
