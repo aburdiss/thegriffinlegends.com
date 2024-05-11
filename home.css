@@ -19,7 +19,8 @@
     align-items: flex-start;
     justify-content: space-between;
   }
-  .introduction-section h1 {
+  .introduction-section h1,
+  .introduction-section .left div {
     text-align: left;
   }
   .introduction-section .right {

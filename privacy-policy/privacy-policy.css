@@ -1,0 +1,7 @@
+.privacy-policy-container a {
+  color: var(--text-color-light);
+}
+.privacy-policy-container a:hover,
+.privacy-policy-container a:focus {
+  color: var(--text-color-hover-light);
+}
