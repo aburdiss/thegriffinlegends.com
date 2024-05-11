@@ -1,0 +1,15 @@
+form label {
+  display: block;
+}
+
+form input,
+form textarea {
+  width: 100%;
+  margin-bottom: 1.5rem;
+  margin-top: 0.5rem;
+  padding: 0.5rem;
+}
+
+form textarea {
+  min-height: 5rem;
+}

@@ -6,7 +6,8 @@
 .introduction-section img {
   max-width: 150px;
 }
-.introduction-section h1 {
+.introduction-section h1,
+.introduction-section .left div {
   text-align: center;
 }
 .introduction-section .right {
@@ -48,4 +49,8 @@
 .featured-publication-image {
   max-width: 100%;
   max-height: 400px;
+}
+
+.contact-container h2 {
+  margin-bottom: 1rem;
 }

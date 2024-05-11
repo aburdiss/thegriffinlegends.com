@@ -29,6 +29,10 @@ h6 {
   margin: 0;
 }
 
+h1 {
+  margin-bottom: 1rem;
+}
+
 a {
   text-decoration-color: transparent;
   color: var(--text-color);
@@ -123,7 +127,7 @@ th {
 .button {
   background-color: var(--primary1);
   border: none;
-  padding: 1rem;
+  padding: 1rem 1.5rem;
   transition: background-color var(--transition);
   cursor: pointer;
   text-decoration: none;
@@ -205,6 +209,12 @@ footer .inner-content {
   padding: 2rem;
   flex-direction: column;
 }
+
+footer .socials {
+  display: flex;
+  gap: 1rem;
+}
+
 footer .links {
   text-align: center;
 }
