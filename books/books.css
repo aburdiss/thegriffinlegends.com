@@ -1,0 +1,61 @@
+.book {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+.book h2 {
+  margin-bottom: 1rem;
+}
+.image-container img {
+  max-width: 100%;
+  border: 3px ridge grey;
+}
+
+.book a:not(.button) {
+  color: var(--text-color-light);
+}
+.book a:not(.button):hover,
+.book a:not(.button):focus {
+  color: var(--text-color-hover-light);
+}
+
+.isbn {
+  font-size: 0.8rem;
+  margin-bottom: 2rem;
+  margin-top: 0.2rem;
+}
+
+.links {
+  margin-top: 2rem;
+  gap: 2rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.reviews-heading {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: 1.5rem;
+}
+
+.reviews {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 2rem;
+}
+
+.reviews img {
+  height: 60px;
+}
+
+@media (min-width: 800px) {
+  .book {
+    flex-direction: row;
+  }
+  .image-container img {
+    max-width: 250px;
+    position: sticky;
+    top: 2rem;
+  }
+}
