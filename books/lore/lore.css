@@ -1,0 +1,57 @@
+.lore {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+.article-container {
+  display: flex;
+  flex-direction: column;
+  background-color: black;
+  border: 1px solid white;
+}
+
+.article-container img {
+  height: 300px;
+  object-fit: contain;
+}
+@media (min-width: 800px) {
+  .article-container {
+    max-width: calc(50% - 0.75rem);
+  }
+}
+.text-container {
+  padding: 1.5rem;
+}
+
+.avatar-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+.avatar-container a {
+  color: white;
+}
+.avatar-container a:hover,
+.avatar-container a:focus {
+  color: #ccc;
+  text-decoration-color: #ccc;
+}
+.avatar-container img {
+  width: 50px;
+  height: 50px;
+  object-fit: cover;
+  border-radius: 50%;
+}
+.avatar-container .right {
+  margin-left: 0.75rem;
+}
+.avatar-container .date {
+  font-size: 0.75rem;
+}
+.avatar-container .time-to-read {
+  font-size: 0.75rem;
+}
+.article-container h2 {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
