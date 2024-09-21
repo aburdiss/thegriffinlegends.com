@@ -34,6 +34,8 @@
     <link rel="mask-icon" href="./safari-pinned-tab.svg" color="#45659d" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#45659d" />
+    <script src="./assets/js/sanityBlockContent.js" defer></script>
+    <script src="./home.js" defer></script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
@@ -71,10 +73,10 @@
       <div class="inner-content">
         <section class="introduction-section overlay">
           <div class="left">
-            <h1>The Griffin Legends</h1>
-            <div>Mark and Summer Howard</div>
+            <h1 id="first-section-headline">The Griffin Legends</h1>
+            <div id="first-section-text">Mark and Summer Howard</div>
           </div>
-          <div class="right">
+          <div class="right" id="first-section-image">
             <img
               src="./assets/images/markandsummer.jpg"
               alt="A photo of Mark and Summer"
@@ -115,11 +117,13 @@
           </div>
         </section>
         <section class="contact-container overlay">
-          <h2>Interested in Learning More?</h2>
-          <p>
-            Sign up for our email list to receive important updates and future
-            messages.
-          </p>
+          <h2 id="contact-section-headline">Interested in Learning More?</h2>
+          <div id="contact-section-text">
+            <p>
+              Sign up for our email list to receive important updates and future
+              messages.
+            </p>
+          </div>
           <div class="mailchimp-form">Mailchimp Form here</div>
         </section>
       </div>
