@@ -3,6 +3,11 @@
   font-family: 'Enriqueta', serif;
 }
 
+@font-face {
+  font-family: 'Seagram';
+  src: url('./assets/fonts/SeagramTfb.ttf');
+}
+
 :root {
   --overlay-color: #00000088;
   --background-secondary: #2a2a2a;
@@ -25,9 +30,10 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+  font-family: 'Seagram', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
     'Lucida Sans', Arial, sans-serif;
   margin: 0;
+  font-weight: normal;
 }
 
 h1 {
@@ -163,6 +169,7 @@ header .inner-content {
 .logo-container {
   display: flex;
   align-items: center;
+  text-decoration: none;
 }
 .sitename {
   color: var(--text-color-light);
@@ -184,13 +191,12 @@ nav ul {
   list-style-type: none;
   padding: 0;
 }
-nav ul li {
-  padding-left: 1rem;
-}
 header nav a {
   color: var(--text-color-light);
   padding-top: 1rem;
   padding-bottom: 1rem;
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
 }
 header nav a:hover,
 header nav a:focus {
@@ -205,13 +211,14 @@ header .has-submenu > a {
   padding-right: 0.2rem;
 }
 
-header .has-submenu::after {
+header .has-submenu > a::after {
   content: '';
   display: inline-block;
   border-top: 0.5rem solid var(--text-color-light);
   transition: border-top-color 0.2s, transform 0.2s;
   border-left: 0.35rem solid transparent;
   border-right: 0.35rem solid transparent;
+  margin-left: 0.35rem;
 }
 header .submenu {
   position: absolute;
@@ -238,8 +245,8 @@ header .has-submenu:focus-within .submenu {
   opacity: 1;
   pointer-events: initial;
 }
-header .has-submenu:hover::after,
-header .has-submenu:focus-within::after {
+header .has-submenu > a:hover::after,
+header .has-submenu:focus-within > a::after {
   transform: rotateX(180deg);
   border-top-color: var(--text-color-hover-light);
 }
