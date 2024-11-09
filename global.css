@@ -3,6 +3,10 @@
   font-family: 'Enriqueta', serif;
 }
 
+@view-transition {
+  navigation: auto;
+}
+
 @font-face {
   font-family: 'Seagram';
   src: url('./assets/fonts/SeagramTfb.ttf');
@@ -59,6 +63,7 @@ body {
   background-image: url(./assets/images/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
+  background-position: center;
 }
 
 .inner-content {
