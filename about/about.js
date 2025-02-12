@@ -1,6 +1,6 @@
 let PROJECT_ID = 'qqm8v4gw';
 let DATASET = 'production';
-const PAGE_NAME = 'home';
+const PAGE_NAME = 'about';
 let QUERY = encodeURIComponent('*[_type == "' + PAGE_NAME + '"]');
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
@@ -9,11 +9,8 @@ const firstSectionHeadlineContainer = document.querySelector(
 );
 const firstSectionTextContainer = document.querySelector('#first-section-text');
 
-const contactSectionHeadlineContainer = document.querySelector(
-  '#contact-section-headline'
-);
-const contactSectionTextContainer = document.querySelector(
-  '#contact-section-text'
+const firstSectionLinkContainer = document.querySelector(
+  '#first-section-link-container'
 );
 
 // fetch the content
@@ -22,16 +19,12 @@ fetch(URL)
   .then(({ result }) => {
     const page = result.find((obj) => obj?._id === PAGE_NAME);
 
-    // Put data in home page
-    const {
-      firstSectionHeadline,
-      firstSectionText,
-      contactSectionHeadline,
-      contactSectionText,
-    } = page;
+    // Put data in about page
+    const { firstSectionHeadline, firstSectionText, firstSectionLink } = page;
     firstSectionHeadlineContainer.innerText = firstSectionHeadline;
     sanityBlockContent(firstSectionTextContainer, firstSectionText);
-    contactSectionHeadlineContainer.innerText = contactSectionHeadline;
-    sanityBlockContent(contactSectionTextContainer, contactSectionText);
+    if (!!firstSectionLink) {
+      firstSectionLinkContainer.innerHTML = `<a class="button" href="${firstSectionLink.url}">${firstSectionLink.title}</a>`;
+    }
   })
   .catch((err) => console.error(err));
