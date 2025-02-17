@@ -50,6 +50,7 @@ fetch(URL)
       const authorContainer = document.createElement('section');
       authorContainer.classList.add('bio');
       authorContainer.classList.add('overlay');
+      authorContainer.id = formatSlug(author.name);
 
       const imageContainer = document.createElement('div');
       imageContainer.classList.add('image-container');
@@ -60,7 +61,6 @@ fetch(URL)
       textContainer.classList.add('text-container');
 
       const authorNameContainer = document.createElement('h2');
-      authorNameContainer.id = author.name.replaceAll(' ', '').toLowerCase();
       authorNameContainer.innerText = author.name;
       textContainer.appendChild(authorNameContainer);
 
@@ -71,6 +71,8 @@ fetch(URL)
       authorContainer.appendChild(textContainer);
 
       biographyContainer.appendChild(authorContainer);
+
+      scrollToId();
     });
   })
   .catch((err) => console.error(err));

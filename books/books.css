@@ -5,6 +5,7 @@
 }
 .book h2 {
   margin-bottom: 1rem;
+  font-size: 2.8rem;
 }
 .image-container img {
   max-width: 100%;
@@ -59,3 +60,8 @@
     top: 2rem;
   }
 }
+
+#books-container {
+  margin-top: 1rem;
+}
+
