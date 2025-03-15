@@ -28,13 +28,14 @@
   justify-content: flex-start;
   align-items: center;
 }
-.avatar-container a {
+.avatar-container a,
+.article-container a {
   color: white;
-}
-.avatar-container a:hover,
-.avatar-container a:focus {
-  color: #ccc;
-  text-decoration-color: #ccc;
+  &:hover,
+  &:focus {
+    color: #ccc;
+    text-decoration-color: #ccc;
+  }
 }
 .avatar-container img {
   width: 50px;

@@ -41,6 +41,7 @@ h6 {
     'Lucida Sans', Arial, sans-serif;
   margin: 0;
   font-weight: normal;
+  letter-spacing: 1px;
 }
 
 h1 {
@@ -91,6 +92,15 @@ main .inner-content {
 
 .overlay:first-of-type {
   margin-top: 0rem;
+}
+
+.overlay a {
+  color: white;
+  &:hover,
+  &:focus {
+    color: #ccc;
+    text-decoration-color: #ccc;
+  }
 }
 
 .fifty-fifty-column {
@@ -148,6 +158,11 @@ th {
   text-decoration: none;
   color: var(--text-color-light);
   display: inline-block;
+}
+.button.back {
+  margin-bottom: 1rem;
+  background-color: var(--overlay-color);
+  color: var(--text-color-light);
 }
 .button:hover,
 .button:focus {

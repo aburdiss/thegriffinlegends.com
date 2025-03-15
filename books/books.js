@@ -1,6 +1,6 @@
 let PROJECT_ID = 'qqm8v4gw';
 let DATASET = 'production';
-const PAGE_NAME = 'books';
+const PAGE_NAME = 'bookPage';
 let QUERY = encodeURIComponent(`*[_type in ["${PAGE_NAME}", "book"]]{
   _type == "${PAGE_NAME}" => {
     _type,
@@ -40,11 +40,11 @@ const booksContainer = document.querySelector('#books-container');
 fetch(URL)
   .then((res) => res.json())
   .then(({ result }) => {
-    console.log(result);
     const page = result.find((obj) => obj?._type === PAGE_NAME);
 
     // Put data in books page
     const { firstSectionHeadline, firstSectionText, firstSectionLink } = page;
+    console.log(firstSectionText);
 
     firstSectionHeadlineContainer.innerText = firstSectionHeadline;
     sanityBlockContent(firstSectionTextContainer, firstSectionText);

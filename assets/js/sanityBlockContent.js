@@ -12,7 +12,7 @@
  * @copyright 2025 Alexander Burdiss
  * @author Alexander Burdiss
  * @since 3/15/25
- * @version 1.1.0
+ * @version 1.1.1
  */
 function sanityBlockContent(renderNode, block) {
   renderNode.innerHTML = '';
@@ -44,7 +44,7 @@ function sanityBlockContent(renderNode, block) {
 
       item.children.map((child) => {
         const text = child.text;
-        if (child.marks.length) {
+        if (child.marks.length && !child.marks.includes('em')) {
           // This is an anchor and needs attached to its data in the parent;
           const href = linkData.find(
             (item) => item._key === child.marks[0]
@@ -54,9 +54,10 @@ function sanityBlockContent(renderNode, block) {
           link.innerText = text;
           parent.appendChild(link);
         } else {
-          const span = document.createElement('span');
-          span.innerText = text;
-          parent.appendChild(span);
+          const isEm = child.marks.includes('em');
+          const container = document.createElement(isEm ? 'em' : 'span');
+          container.innerText = text;
+          parent.appendChild(container);
         }
       });
       if (isInList) {
