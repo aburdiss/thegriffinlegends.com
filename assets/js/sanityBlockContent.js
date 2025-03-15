@@ -9,10 +9,10 @@
  * library that is a more feature complete way to do this, and the library I
  * am replacing, since I don't want to use any dependencies.
  *
- * @copyright 2023 Alexander Burdiss
+ * @copyright 2025 Alexander Burdiss
  * @author Alexander Burdiss
- * @since 2/12/23
- * @version 1.0.0
+ * @since 3/15/25
+ * @version 1.1.0
  */
 function sanityBlockContent(renderNode, block) {
   renderNode.innerHTML = '';
@@ -66,4 +66,6 @@ function sanityBlockContent(renderNode, block) {
       }
     }
   });
+
+  return renderNode;
 }

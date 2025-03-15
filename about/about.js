@@ -71,8 +71,7 @@ fetch(URL)
       authorContainer.appendChild(textContainer);
 
       biographyContainer.appendChild(authorContainer);
-
-      scrollToId();
     });
+    scrollToId();
   })
   .catch((err) => console.error(err));
