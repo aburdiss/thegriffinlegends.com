@@ -1,0 +1,1 @@
+document.querySelector('#news-container').innerHTML = 'Loading News...';

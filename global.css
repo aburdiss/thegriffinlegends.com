@@ -77,6 +77,10 @@ body {
   padding-right: 2rem;
 }
 
+main {
+  min-height: calc(100vh - 175px);
+}
+
 main .inner-content {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -274,6 +278,10 @@ header .has-submenu:focus-within > a::after {
   border-top-color: var(--text-color-hover-light);
 }
 
+.external-link {
+  color: var(--text-color-light);
+}
+
 /*============================================================================*/
 /* Footer Styles */
 /*============================================================================*/
@@ -328,4 +336,9 @@ footer a {
 footer a:hover,
 footer a:focus {
   color: var(--text-color-hover-light);
+}
+
+footer .alex {
+  padding-top: 0.5rem;
+  font-size: 0.75rem;
 }
