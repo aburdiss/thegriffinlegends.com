@@ -48,6 +48,7 @@
 
 .reviews img {
   height: 60px;
+  max-width: 100%;
 }
 
 @media (min-width: 800px) {

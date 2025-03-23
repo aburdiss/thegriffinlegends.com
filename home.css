@@ -48,8 +48,14 @@
   }
 }
 .featured-publication-image {
-  max-width: 100%;
-  max-height: 400px;
+  width: 100%;
+}
+
+.featured-publication-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .contact-container h2 {
