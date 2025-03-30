@@ -185,12 +185,11 @@ header {
 header .inner-content {
   display: flex;
   justify-content: space-between;
-  flex-direction: column;
-  align-items: center;
+  flex-direction: row;
 }
 @media (min-width: 800px) {
   header .inner-content {
-    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 .logo-container {
@@ -213,73 +212,168 @@ header .inner-content {
   height: 2.5rem;
   margin-right: 1rem;
 }
+
+header nav {
+  width: 100%;
+}
+
 nav ul {
   display: flex;
+  flex-direction: column;
   list-style-type: none;
   padding: 0;
+  margin: 0;
+  li {
+    text-align: center;
+  }
 }
+
+@media (min-width: 860px) {
+  header nav {
+    width: unset;
+  }
+  nav ul {
+    flex-direction: row;
+    text-align: left;
+  }
+}
+
 header nav a {
   color: var(--text-color-light);
   padding-top: 1rem;
   padding-bottom: 1rem;
-  padding-left: 0.5rem;
-  padding-right: 0.5rem;
+  padding-left: 1rem;
+  padding-right: 1rem;
+  display: block;
+  background-color: var(--background-secondary);
+  transition: color var(--transition), background-color var(--transition);
 }
 header nav a:hover,
 header nav a:focus {
-  color: var(--text-color-hover-light);
-}
-
-header .has-submenu {
-  position: relative;
-}
-
-header .has-submenu > a {
-  padding-right: 0.2rem;
-}
-
-header .has-submenu > a::after {
-  content: '';
-  display: inline-block;
-  border-top: 0.5rem solid var(--text-color-light);
-  transition: border-top-color 0.2s, transform 0.2s;
-  border-left: 0.35rem solid transparent;
-  border-right: 0.35rem solid transparent;
-  margin-left: 0.35rem;
-}
-header .submenu {
-  position: absolute;
-  opacity: 0;
-  pointer-events: none;
-  transition: opacity 0.2s;
-  top: 2rem;
-  left: 0;
-  background-color: var(--background-secondary);
-  min-width: 80px;
-}
-header .submenu li {
-  padding-left: 0rem;
-  width: 100%;
-}
-
-header .submenu a {
-  padding: 1rem;
-  display: block;
-}
-
-header .has-submenu:hover .submenu,
-header .has-submenu:focus-within .submenu {
-  opacity: 1;
-  pointer-events: initial;
-}
-header .has-submenu > a:hover::after,
-header .has-submenu:focus-within > a::after {
-  transform: rotateX(180deg);
-  border-top-color: var(--text-color-hover-light);
-}
-
-.external-link {
   color: var(--text-color-light);
+  background-color: var(--text-color-hover);
+}
+
+@media (min-width: 860px) {
+  header nav a {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    background-color: unset;
+  }
+
+  header nav a:hover,
+  header nav a:focus {
+    color: var(--text-color-hover-light);
+    background-color: unset;
+    text-decoration-color: transparent;
+  }
+}
+
+header .external-link {
+  color: var(--text-color-light);
+}
+
+.hamburger {
+  margin: 1rem;
+  width: 40px;
+  height: 30px;
+  position: relative;
+  top: 0;
+  right: 0;
+  transform: rotate(0deg);
+  cursor: pointer;
+  border: none;
+  background: none;
+}
+@media screen and (min-width: 860px) {
+  .hamburger {
+    display: none;
+  }
+}
+.hamburger span {
+  top: 0;
+  left: 0;
+}
+.hamburger .first-span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--text-color-light);
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+  border-radius: 0px;
+  transform-origin: center center;
+  position: absolute;
+  transform: translate3d(0px, 0px, 0px) rotate(0deg);
+  margin-top: -0.5px;
+}
+.hamburger.open .first-span {
+  transform: translate3d(0px, 15px, 0px) rotate(45deg);
+}
+.hamburger .second-span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--text-color-light);
+  transition-timing-function: ease-out;
+  transition-duration: 0.125s;
+  border-radius: 0px;
+  transform-origin: center center;
+  position: absolute;
+  opacity: 1;
+  top: 15px;
+  margin-top: -0.5px;
+}
+.hamburger.open .second-span {
+  opacity: 0;
+}
+.hamburger .third-span {
+  display: block;
+  height: 4px;
+  width: 100%;
+  background-color: var(--text-color-light);
+  transition-timing-function: ease;
+  transition-duration: 0.5s;
+  border-radius: 0px;
+  transform-origin: center center;
+  position: absolute;
+  transform: translate3d(0px, 30px, 0px) rotate(0deg);
+  margin-top: -0.5px;
+}
+.hamburger.open .third-span {
+  transform: translate3d(0px, 15px, 0px) rotate(-45deg);
+}
+
+.js-enabled header nav {
+  display: none;
+  a {
+    border-bottom: 1px solid var(--primary1);
+  }
+}
+@media screen and (min-width: 860px) {
+  .js-enabled header nav {
+    display: flex;
+    a {
+      border-bottom: unset;
+    }
+  }
+}
+
+.js-enabled header.mobile-menu-open nav {
+  overflow: scroll;
+  display: block;
+  position: fixed;
+  top: 87px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: var(--background-secondary);
+  z-index: 1000;
+}
+.js-enabled header.mobile-menu-open nav > a {
+  display: block;
+  text-align: left;
+  padding: 1rem 2rem;
 }
 
 /*============================================================================*/

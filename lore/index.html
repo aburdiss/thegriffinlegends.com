@@ -3,37 +3,55 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Page Not Found | The Griffin Legends</title>
-    <link href="/normalize.css" rel="stylesheet" />
-    <link href="/global.css" rel="stylesheet" />
+    <title>Lore | The Griffin Legends</title>
+    <link href="../normalize.css" rel="stylesheet" />
+    <link href="../global.css" rel="stylesheet" />
+    <link href="./lore.css" rel="stylesheet" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link
       href="https://fonts.googleapis.com/css2?family=Enriqueta:wght@400;700&display=swap"
       rel="stylesheet"
     />
 
-    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
-    <link rel="manifest" href="/site.webmanifest" />
-    <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#45659d" />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../apple-touch-icon.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../favicon-32x32.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../favicon-16x16.png"
+    />
+    <link rel="manifest" href="../site.webmanifest" />
+    <link rel="mask-icon" href="../safari-pinned-tab.svg" color="#45659d" />
     <meta name="msapplication-TileColor" content="#ffffff" />
     <meta name="theme-color" content="#45659d" />
-    <script src="/assets/js/header.js" defer></script>
-    <script src="/assets/js/footer.js" defer></script>
+    <script src="../assets/js/footer.js" defer></script>
+    <script src="../assets/js/sanityBlockContent.js" defer></script>
+    <script src="../assets/js/formatSlug.js" defer></script>
+    <script src="../assets/js/scrollToId.js" defer></script>
+    <script src="./lore.js" defer></script>
   </head>
   <body>
     <a href="#main-content" class="skip-link">Skip to main content</a>
     <header>
       <div class="inner-content">
-        <a href="/" class="logo-container">
-          <img class="logo" src="/assets/images/griffinshield.png" alt="" />
+        <a href="../" class="logo-container">
+          <img class="logo" src="../assets/images/griffinshield.png" alt="" />
           <div class="sitename">The Griffin Legends</div>
         </a>
         <nav>
           <ul>
             <li>
-              <a href="/">Home</a>
+              <a href="../">Home</a>
             </li>
           </ul>
         </nav>
@@ -42,8 +60,12 @@
     <main id="main-content">
       <div class="inner-content">
         <section class="overlay">
-          <h1>404: Page Not Found</h1>
-          <p>Head to the <a href="/">Homepage</a> to look around.</p>
+          <h1 id="first-section-headline">Lore</h1>
+          <div id="first-section-text"></div>
+          <div id="first-section-link-container"></div>
+        </section>
+        <section class="lore overlay" id="lore-posts-container">
+          Loading Lore…
         </section>
       </div>
     </main>
@@ -83,7 +105,7 @@
         </div>
         <div id="copyright" class="copyright">©2024 The Griffin Legends</div>
         <div class="links">
-          <a href="/privacy-policy">Privacy Policy</a>
+          <a href="../privacy-policy">Privacy Policy</a>
           <div class="alex">
             Website built and designed by
             <a href="https://alexanderburdiss.com">Alexander Burdiss</a>
