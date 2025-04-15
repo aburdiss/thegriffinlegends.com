@@ -57,7 +57,7 @@ hr {
 
     &:hover,
     &:focus {
-        color: var(--text-color-hover-light);
+      color: var(--text-color-hover-light);
     }
 
     svg {
