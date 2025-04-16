@@ -11,8 +11,8 @@
  *
  * @copyright 2025 Alexander Burdiss
  * @author Alexander Burdiss
- * @since 3/15/25
- * @version 1.1.1
+ * @since 4/15/25
+ * @version 1.2.0
  */
 function sanityBlockContent(renderNode, block) {
   renderNode.innerHTML = '';
@@ -21,6 +21,7 @@ function sanityBlockContent(renderNode, block) {
   let listParent = null;
 
   block?.forEach((item) => {
+    console.log(item);
     if (item._type === 'block') {
       const style = item.style;
       const linkData = item.markDefs;
@@ -65,6 +66,12 @@ function sanityBlockContent(renderNode, block) {
       } else {
         renderNode.appendChild(parent);
       }
+    }
+    if (item._type === 'image') {
+      const image = document.createElement('img');
+      image.src = item.asset.url;
+      image.alt = item.alt;
+      renderNode.appendChild(image);
     }
   });
 

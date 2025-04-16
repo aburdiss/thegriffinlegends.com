@@ -16,7 +16,14 @@ function main() {
     "authorImgUrl": author->image.asset->url,
     publishDate,
     shortDescription,
-    body,
+    body[] {
+      _type == "block" => @,
+      _type == "image" => {
+        _type,
+        alt,
+        asset->
+      }
+    },
     "imageUrl": image.asset->url,
     "imageAlt": image.alt,
     }`
