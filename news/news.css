@@ -75,3 +75,7 @@
     flex-direction: row-reverse;
   }
 }
+
+.no-events {
+  margin-top: 1rem;
+}

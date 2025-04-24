@@ -75,6 +75,7 @@ fetch(URL)
     eventsHeadlineContainer.innerText = pageData.eventsHeadline;
 
     if (news.length === 0) {
+      newsContainer.classList.add('no-events');
       newsContainer.innerHTML = `
       <p>There is no news to display at this time.</p>
       <p>Please check back later!</p>`;
@@ -83,6 +84,7 @@ fetch(URL)
     }
 
     if (events.length === 0) {
+      eventsContainer.classList.add('no-events');
       eventsContainer.innerHTML = `
       <p>There are no Events to display at this time.</p>
       <p>Please check back later!</p>`;
