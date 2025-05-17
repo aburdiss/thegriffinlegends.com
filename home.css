@@ -90,3 +90,57 @@
 .contact-container h2 {
   margin-bottom: 1rem;
 }
+
+.mailchimp-form {
+  margin-top: 1.5rem;
+}
+
+.mailchimp-form h2 {
+  display: none;
+}
+
+.mailchimp-form .asterisk {
+  color: var(--error1);
+}
+
+.mailchimp-form label {
+  display: block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.mc-field-group {
+  margin-bottom: 1rem;
+}
+.mailchimp-form .mc-field-group input {
+  padding: 0.25rem;
+  border: 1.5px solid transparent;
+  transition: border-color 0.3s;
+}
+.mailchimp-form .mc-field-group input,
+.mailchimp-form .mce_inline_error {
+  display: block;
+  width: 100%;
+}
+.mailchimp-form #mc_embed_signup div.mce_inline_error {
+  font-weight: normal;
+  background-color: var(--error1);
+}
+@media (min-width: 800px) {
+  .mailchimp-form .mc-field-group input,
+  .mailchimp-form .mce_inline_error {
+    width: 50%;
+  }
+}
+.mailchimp-form .mc-field-group input.valid {
+  border: 1.5px solid var(--primary3);
+}
+
+.mailchimp-form #mc_embed_signup input.mce_inline_error {
+  border: 1.5px solid var(--error1);
+}
+
+.mailchimp-form .response {
+  padding-top: 1rem;
+  padding-bottom: 2rem;
+}

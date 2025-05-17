@@ -32,6 +32,7 @@ body {
   --primary3: #79b473;
   --primary4: #70a37f;
   --border1: #bbbbbb;
+  --error1: #E3655B;
   --break-s: 800px;
   --break-l: 1024px;
   --transition: 0.2s;
