@@ -1,13 +1,11 @@
 #!/bin/bash
-# thegriffinlegends.com/scripts/copyHooks.sh
-# Created by Alexander Burdiss 6/20/22
+# thegriffinlegends.com/scripts/dev-setup.sh
+# Created by Alexander Burdiss 5/17/2025
 # Copyright (c) Alexander Burdiss
 #
 # A simple script that copies hooks from the scripts/hooks directory to the
 # appropriate place in the untracked git configuration
 #
-cp -R scripts/hooks/ .git/hooks/
 
-chmod -R +x .git/hooks/
-
+git config core.hooksPath ./scripts/hooks
 echo 'git hooks copied'

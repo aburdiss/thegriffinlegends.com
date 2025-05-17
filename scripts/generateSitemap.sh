@@ -25,7 +25,7 @@ currentPath=${currentPath##*/}
 currentPath=${currentPath:-/}
 if [ "$currentPath" != "$projectName" ]; then
     echo
-    echo "Error: Script not ran from correct directory. Please run from the root directory using \`./scripts/bundlejs.sh\`"
+    echo "Error: Script not ran from correct directory. Please run from the root directory using \`./scripts/generateSitemap.sh\`"
     echo
     exit 1
 fi
@@ -61,7 +61,7 @@ for i in "${filenames[@]}"; do
         priority="1.00"
       fi
       echo "  <url>" >> $sitemapfile
-      echo "    <loc>https://shelbyready.com$path</loc>" >> $sitemapfile
+      echo "    <loc>https://$projectName$path</loc>" >> $sitemapfile
       echo "    <lastmod>$now</lastmod>" >> $sitemapfile
       echo "    <priority>$priority</priority>" >> $sitemapfile
       echo "  </url>" >> $sitemapfile

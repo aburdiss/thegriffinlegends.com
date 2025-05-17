@@ -7,9 +7,8 @@
 # Version 1.0.1
 #
 
-./scripts/bundlejs.sh
-git add ./bundle.js
+# ./scripts/bundlejs.sh
+# git add ./bundle.js
 
 ./scripts/generateSitemap.sh
 git add ./sitemap.xml
-
