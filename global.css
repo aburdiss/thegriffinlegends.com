@@ -18,6 +18,11 @@ body {
 :root {
   --overlay-color: #00000088;
   --background-secondary: #2a2a2a;
+  --font-large: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
+    'Lucida Sans', Arial, sans-serif;
+  --font-main: 'Enriqueta', sans-serif;
+  --font-styled: 'Seagram', 'Trebuchet MS', 'Lucida Sans Unicode',
+    'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
   --text-color: #000000;
   --text-color-hover: #444444;
   --text-color-light: #ffffff;
@@ -26,6 +31,7 @@ body {
   --primary2: #82204a;
   --primary3: #79b473;
   --primary4: #70a37f;
+  --border1: #bbbbbb;
   --break-s: 800px;
   --break-l: 1024px;
   --transition: 0.2s;
@@ -37,8 +43,7 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: 'Seagram', 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: var(--font-styled);
   margin: 0;
   font-weight: normal;
   letter-spacing: 1px;
@@ -63,11 +68,16 @@ p {
   margin-top: 0;
 }
 
-body {
+body::before {
+  position: fixed;
+  content: '';
+  z-index: -1;
   background-image: url(./assets/images/background.jpg);
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
+  height: 100vh;
+  width: 100vw;
 }
 
 .inner-content {
@@ -200,8 +210,7 @@ header .inner-content {
 .sitename {
   color: var(--text-color-light);
   font-size: 1.4rem;
-  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande',
-    'Lucida Sans', Arial, sans-serif;
+  font-family: var(--font-large);
 }
 @media (min-width: 400px) {
   .sitename {
