@@ -53,7 +53,6 @@ eventsContainer.innerHTML = `<p>Loading Events...</p>`;
 fetch(URL)
   .then((res) => res.json())
   .then(({ result }) => {
-    console.log(result);
     const events = result
       .filter(function (content) {
         return content._type === 'event';

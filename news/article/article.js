@@ -28,7 +28,6 @@ function main() {
     .then((res) => res.json())
     .then(({ result }) => {
       const post = result[0];
-      console.log(post);
 
       h1.innerText = post.headline;
 

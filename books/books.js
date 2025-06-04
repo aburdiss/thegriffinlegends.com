@@ -44,7 +44,6 @@ fetch(URL)
 
     // Put data in books page
     const { firstSectionHeadline, firstSectionText, firstSectionLink } = page;
-    console.log(firstSectionText);
 
     firstSectionHeadlineContainer.innerText = firstSectionHeadline;
     sanityBlockContent(firstSectionTextContainer, firstSectionText);

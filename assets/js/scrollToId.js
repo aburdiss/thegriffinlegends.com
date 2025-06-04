@@ -14,7 +14,6 @@
 function scrollToId() {
   const hash = window.location.hash;
   const element = document.querySelector(hash);
-  console.log(element);
   if (element) {
     element.scrollIntoView({ behavior: 'smooth' });
   }

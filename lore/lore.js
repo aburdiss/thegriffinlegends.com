@@ -53,7 +53,6 @@ fetch(URL)
       lorePostsContainer.innerHTML = '';
     }
     lorePages.map(function (pageData) {
-      console.log(pageData);
       const loreContainer = document.createElement('div');
       loreContainer.classList.add('article-container');
 
