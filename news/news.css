@@ -15,8 +15,8 @@
   }
 
   img {
+    width: 100%;
     max-height: 300px;
-    max-width: 300px;
     object-fit: contain;
     margin: auto;
     display: block;
@@ -28,9 +28,19 @@
     margin: 1rem 0
   }
 }
-@media (min-width: 600px) {
+@media (min-width: 800px) {
   .event-card {
     flex-direction: row;
+
+    .left {
+      display: flex;
+      background-color: #00000044;
+    }
+
+    img {
+      height: 300px;
+    width: 300px;
+    }
   }
 }
 
