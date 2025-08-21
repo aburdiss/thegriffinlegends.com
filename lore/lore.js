@@ -52,23 +52,28 @@ fetch(URL)
     if (lorePages?.length > 0) {
       lorePostsContainer.innerHTML = '';
     }
-    lorePages.map(function (pageData) {
-      const loreContainer = document.createElement('div');
-      loreContainer.classList.add('article-container');
+    lorePages
+      .sort(
+        (a, b) =>
+          new Date(b.publishDate).getTime() - new Date(a.publishDate).getTime()
+      )
+      .map(function (pageData) {
+        const loreContainer = document.createElement('div');
+        loreContainer.classList.add('article-container');
 
-      loreContainer.innerHTML = `<img
+        loreContainer.innerHTML = `<img
               src="${pageData.imageUrl}"
               alt="${pageData.imageAlt}"
             />
             <div class="text-container">
               <div class="avatar-container">
                 <img src="${pageData.authorImgUrl}" alt="${
-        pageData.authorName
-      }" />
+          pageData.authorName
+        }" />
                 <div class="right">
                   <a href="../../about#${formatSlug(pageData.authorName)}">${
-        pageData.authorName
-      }</a>
+          pageData.authorName
+        }</a>
                   <div class="date">${new Date(
                     pageData.publishDate
                   ).toLocaleDateString()}</div>
@@ -87,7 +92,7 @@ fetch(URL)
               </div>
             </div>`;
 
-      lorePostsContainer.appendChild(loreContainer);
-    });
+        lorePostsContainer.appendChild(loreContainer);
+      });
   })
   .catch((err) => console.error(err));
