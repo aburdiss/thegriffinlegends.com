@@ -9,7 +9,7 @@ navContainer.innerHTML = `
   <li><a href="${subdomain}/books">Books</a></li>
   <li><a href="${subdomain}/lore">Lore</a></li>
   <li>
-    <a href="https://the-griffin-legends.creator-spring.com" class="external-link">
+    <a href="https://shop.thegriffinlegends.com" class="external-link">
       Shop
       <svg
         stroke="currentColor"
