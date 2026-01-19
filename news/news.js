@@ -45,6 +45,10 @@ const eventsContainer = document.querySelector('#events-container');
 const eventsHeadlineContainer = document.querySelector(
   '#events-headline-container'
 );
+const pastEventsContainer = document.querySelector('#past-events-container');
+const pastEventsHeadlineContainer = document.querySelector(
+  '#past-events-headline-container'
+);
 
 newsContainer.innerHTML = `<p>Loading News...</p>`;
 eventsContainer.innerHTML = `<p>Loading Events...</p>`;
@@ -53,15 +57,20 @@ eventsContainer.innerHTML = `<p>Loading Events...</p>`;
 fetch(URL)
   .then((res) => res.json())
   .then(({ result }) => {
-    const events = result
-      .filter(function (content) {
-        return content._type === 'event';
-      })
-      .filter(function (event) {
-        const tomorrow = new Date();
-        tomorrow.setDate(tomorrow.getDate() + 1);
-        return new Date(event.date).getTime() > tomorrow.getTime();
+    const allEvents = result.filter(function (content) {
+      return content._type === 'event';
+    });
+    const events = allEvents.filter(function (event) {
+      const tomorrow = new Date();
+      tomorrow.setDate(tomorrow.getDate() + 1);
+      return new Date(event.date).getTime() > tomorrow.getTime();
+    });
+    const pastEvents = allEvents
+      .concat(events)
+      .filter(function (item, index, array) {
+        return array.indexOf(item) == array.lastIndexOf(item);
       });
+
     const news = result.filter(function (content) {
       return content._type === 'news';
     });
@@ -69,9 +78,14 @@ fetch(URL)
       return content._type === 'newsEventPage';
     });
 
-    pageHeadlineContainer.innerText = pageData.mainHeadline;
-    newsHeadlineContainer.innerText = pageData.newsHeadline;
-    eventsHeadlineContainer.innerText = pageData.eventsHeadline;
+    pageHeadlineContainer.innerText =
+      pageData.mainHeadline ?? pageHeadlineContainer.innerText;
+    newsHeadlineContainer.innerText =
+      pageData.newsHeadline ?? newsHeadlineContainer.innerText;
+    eventsHeadlineContainer.innerText =
+      pageData.eventsHeadline ?? eventsHeadlineContainer.innerText;
+    pastEventsHeadlineContainer.innerText =
+      pageData.pastEventsHeadline ?? pastEventsHeadlineContainer.innerText;
 
     if (news.length === 0) {
       newsContainer.classList.add('no-events');
@@ -89,6 +103,15 @@ fetch(URL)
       <p>Please check back later!</p>`;
     } else {
       eventsContainer.innerHTML = createEvents(events);
+    }
+
+    if (pastEvents.length === 0) {
+      pastEventsContainer.classList.add('no-events');
+      pastEventsContainer.innerHTML = `
+      <p>There are no Events to display at this time.</p>
+      <p>Please check back later!</p>`;
+    } else {
+      pastEventsContainer.innerHTML = createEvents(pastEvents);
     }
   })
   .catch((err) => {
