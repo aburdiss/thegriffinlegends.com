@@ -26,12 +26,12 @@ let QUERY = encodeURIComponent(`*[_type in ["${PAGE_NAME}", "book"]]{
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
 const firstSectionHeadlineContainer = document.querySelector(
-  '#first-section-headline'
+  '#first-section-headline',
 );
 const firstSectionTextContainer = document.querySelector('#first-section-text');
 
 const firstSectionLinkContainer = document.querySelector(
-  '#first-section-link-container'
+  '#first-section-link-container',
 );
 
 const booksContainer = document.querySelector('#books-container');
@@ -85,40 +85,48 @@ function createBookNode(bookData) {
   <h2>${bookData.title}</h2>
   <div class="author">
     by <a href="../about#${formatSlug(bookData.author)}" rel="author">${
-    bookData.author
-  }</a>
+      bookData.author
+    }</a>
   </div>
   <div class="isbn">ISBN ${bookData.isbn}</div>
   ${description.outerHTML}
   <div class="links">
-    ${bookData.purchaseOptions
-      .map(function (purchaseOption) {
-        const link = `<a class="button" href="${purchaseOption.url.trim()}">${
-          purchaseOption.title
-        }</a>`;
-        return link;
-      })
-      .reduce(function (acc, cur) {
-        return acc + cur;
-      }, '')}
+    ${
+      bookData.purchaseOptions
+        ? bookData.purchaseOptions
+            ?.map(function (purchaseOption) {
+              const link = `<a class="button" href="${purchaseOption.url.trim()}">${
+                purchaseOption.title
+              }</a>`;
+              return link;
+            })
+            .reduce(function (acc, cur) {
+              return acc + cur;
+            }, '')
+        : 'There are currently no purchase options'
+    }
   </div>
   <h3 class="reviews-heading">Reviews for ${bookData.title}</h3>
   <div class="reviews">
-     ${bookData.reviews
-       .map(function (review) {
-         const imageReview = !!review.imageUrl;
-         const link = `<a class="${
-           !imageReview ? 'button' : ''
-         }" href="${review.url.trim()}">${
-           imageReview
-             ? `<img src="${review.imageUrl}" alt="${review.name}" />`
-             : review.name
-         }</a>`;
-         return link;
-       })
-       .reduce(function (acc, cur) {
-         return acc + cur;
-       }, '')}
+     ${
+       bookData.reviews
+         ? bookData.reviews
+             ?.map(function (review) {
+               const imageReview = !!review.imageUrl;
+               const link = `<a class="${
+                 !imageReview ? 'button' : ''
+               }" href="${review.url.trim()}">${
+                 imageReview
+                   ? `<img src="${review.imageUrl}" alt="${review.name}" />`
+                   : review.name
+               }</a>`;
+               return link;
+             })
+             .reduce(function (acc, cur) {
+               return acc + cur;
+             }, '')
+         : 'There are currently no reviews.'
+     }
   </div>
 </div>`;
   sectionNode.innerHTML = innerHtml;
