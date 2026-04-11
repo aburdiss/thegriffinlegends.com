@@ -55,7 +55,7 @@ fetch(URL)
     const books = result
       .filter((obj) => obj?._type === 'book')
       .sort(function (a, b) {
-        return a.isbn > b.isbn;
+        return a.sort > b.sort;
       });
     if (books.length > 0) {
       booksContainer.innerHTML = '';
