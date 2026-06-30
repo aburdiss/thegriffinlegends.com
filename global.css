@@ -370,7 +370,7 @@ header .external-link {
 }
 
 .js-enabled header.mobile-menu-open nav {
-  overflow: scroll;
+  overflow: auto;
   display: block;
   position: fixed;
   top: 87px;
