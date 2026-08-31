@@ -33,21 +33,21 @@ let QUERY = encodeURIComponent(`*[_type in ["${PAGE_NAME}", "news", "event"]]{
 let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
 const pageHeadlineContainer = document.querySelector(
-  '#page-headline-container'
+  '#page-headline-container',
 );
 
 const newsContainer = document.querySelector('#news-container');
 const newsHeadlineContainer = document.querySelector(
-  '#news-headline-container'
+  '#news-headline-container',
 );
 
 const eventsContainer = document.querySelector('#events-container');
 const eventsHeadlineContainer = document.querySelector(
-  '#events-headline-container'
+  '#events-headline-container',
 );
 const pastEventsContainer = document.querySelector('#past-events-container');
 const pastEventsHeadlineContainer = document.querySelector(
-  '#past-events-headline-container'
+  '#past-events-headline-container',
 );
 
 newsContainer.innerHTML = `<p>Loading News...</p>`;
@@ -119,10 +119,10 @@ fetch(URL)
     newsHeadlineContainer.innerHTML = 'Failed to load news and events.';
     newsContainer.innerHTML = `<br />
 <p>If this persists, please <a href="mailto:thegriffinlegends@alexanderburdiss.com?subject=${encodeURIComponent(
-      'The Griffin Legends Error'
+      'The Griffin Legends Error',
     )}&body=${encodeURIComponent(
       "The News Page on The Griffin Legends is not loading. Here's the error: " +
-        err
+        err,
     )}">Contact Us</a>`;
     console.error(err);
   });
