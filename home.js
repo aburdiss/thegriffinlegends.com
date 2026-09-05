@@ -1,7 +1,7 @@
-let PROJECT_ID = 'qqm8v4gw';
-let DATASET = 'production';
+const PROJECT_ID = 'qqm8v4gw';
+const DATASET = 'production';
 const PAGE_NAME = 'home';
-let QUERY = encodeURIComponent(`*[_type == "${PAGE_NAME}"]{
+const QUERY = encodeURIComponent(`*[_type == "${PAGE_NAME}"]{
   _id,
   firstSectionHeadline,
   firstSectionText,
@@ -15,36 +15,36 @@ let QUERY = encodeURIComponent(`*[_type == "${PAGE_NAME}"]{
   contactSectionHeadline,
   contactSectionText
 }`);
-let URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
+const URL = `https://${PROJECT_ID}.api.sanity.io/v2021-10-21/data/query/${DATASET}?query=${QUERY}`;
 
 // First Section Elements
 const firstSectionHeadlineContainer = document.querySelector(
-  '#first-section-headline'
+  '#first-section-headline',
 );
 const firstSectionTextContainer = document.querySelector('#first-section-text');
 const firstSectionImageContainer = document.querySelector(
-  '#first-section-image'
+  '#first-section-image',
 );
 
 // Featured Book Elements
 const featuredBookHeadlineContainer = document.querySelector(
-  '#featured-book-headline'
+  '#featured-book-headline',
 );
 const featuredBookTitleContainer = document.querySelector(
-  '#featured-book-title'
+  '#featured-book-title',
 );
 const featuredBookImageElement = document.querySelector('#featured-book-image');
 const featuredBookDescriptionContainer = document.querySelector(
-  '#featured-book-description'
+  '#featured-book-description',
 );
 const featuredBookCtaElement = document.querySelector('#featured-book-cta');
 
 // Contact Section Elements
 const contactSectionHeadlineContainer = document.querySelector(
-  '#contact-section-headline'
+  '#contact-section-headline',
 );
 const contactSectionTextContainer = document.querySelector(
-  '#contact-section-text'
+  '#contact-section-text',
 );
 
 // fetch the content
@@ -86,7 +86,7 @@ fetch(URL)
     featuredBookImageElement.alt = featuredBookTitle;
     sanityBlockContent(
       featuredBookDescriptionContainer,
-      featuredBookDescription
+      featuredBookDescription,
     );
     featuredBookCtaElement.href = featuredBookCta.url;
     featuredBookCtaElement.innerText = featuredBookCta.title;
